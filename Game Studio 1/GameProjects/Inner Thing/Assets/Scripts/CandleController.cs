@@ -7,6 +7,7 @@ public class CandleController : MonoBehaviour
 {
     public GameObject CandleUnlit;
     public GameObject Candle_Animation;
+    public GameObject Skeleton;
 
     private void OnMouseUp()
     {
@@ -15,6 +16,7 @@ public class CandleController : MonoBehaviour
         Candle_Animation.SetActive(true);
         // Broadcast a message
         Fungus.Flowchart.BroadcastFungusMessage("Candle is lit");
+        Skeleton.SetActive(true);
 
     }
 }
