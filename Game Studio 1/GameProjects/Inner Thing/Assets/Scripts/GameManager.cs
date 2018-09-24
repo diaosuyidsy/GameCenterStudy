@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Light;
     public Flowchart flowchart;
+    public SpriteRenderer JailBlankMask;
 
     // Update is called once per frame
     void Update ()
@@ -14,4 +15,12 @@ public class GameManager : MonoBehaviour
         Vector3 temp = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         Light.transform.position = new Vector3 (temp.x, temp.y, Light.transform.position.z);
     }
+
+    public void JailTransform ()
+    {
+        Color temp = JailBlankMask.color;
+        temp.a += 0.1f;
+        JailBlankMask.color = temp;
+    }
+
 }
