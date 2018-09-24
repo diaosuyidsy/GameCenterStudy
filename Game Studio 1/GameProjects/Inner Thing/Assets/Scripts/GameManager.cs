@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public void PartyTransform ()
     {
         Color temp = PartyBlankMask.color;
-        temp.a += 0.1f;
+        temp.a += 0.25f;
         PartyBlankMask.color = temp;
     }
 }

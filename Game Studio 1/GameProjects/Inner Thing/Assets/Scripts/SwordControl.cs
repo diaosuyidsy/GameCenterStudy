@@ -10,4 +10,10 @@ public class SwordControl : MonoBehaviour
     {
         Fungus.Flowchart.BroadcastFungusMessage ("Try to pick up sword");
     }
+
+    public void Appear ()
+    {
+        GetComponent<SpriteRenderer> ().enabled = true;
+        GetComponent<BoxCollider2D> ().enabled = true;
+    }
 }

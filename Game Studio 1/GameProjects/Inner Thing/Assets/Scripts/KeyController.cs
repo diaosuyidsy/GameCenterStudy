@@ -30,6 +30,8 @@ public class KeyController : MonoBehaviour
         ClickedKey = true;
         Fungus.Flowchart.BroadcastFungusMessage ("Found the key");
 
+        GetComponent<SpriteRenderer> ().enabled = false;
+
     }
 
     IEnumerator Teleport ()
