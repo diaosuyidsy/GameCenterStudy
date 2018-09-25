@@ -17,6 +17,6 @@ public class CandleController : MonoBehaviour
         // Broadcast a message
         Fungus.Flowchart.BroadcastFungusMessage("Candle is lit");
         Skeleton.SetActive(true);
-
+        GameManager.GM.CandleLit();
     }
 }

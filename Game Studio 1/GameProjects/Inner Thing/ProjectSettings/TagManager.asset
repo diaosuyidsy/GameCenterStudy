@@ -45,3 +45,6 @@ TagManager:
   - name: Front
     uniqueID: 778593105
     locked: 0
+  - name: Frontier
+    uniqueID: 339491091
+    locked: 0
