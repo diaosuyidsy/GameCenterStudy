@@ -18,6 +18,8 @@ public class MonsterControl : MonoBehaviour
 
     private bool PlayerDefensing = false;
 
+    private bool MonsterNotAttacked = true;
+
     // Update is called once per frame
     void Update ()
     {
@@ -74,6 +76,7 @@ public class MonsterControl : MonoBehaviour
         }
         else
         {
+            Debug.Log ("Player Defensed");
             Fungus.Flowchart.BroadcastFungusMessage ("Player Defensed");
         }
     }
@@ -86,13 +89,18 @@ public class MonsterControl : MonoBehaviour
             ActualAttackCD -= Time.deltaTime;
             if (ActualAttackCD <= 0.2f)
             {
-                // Timer is up, Animation is attacking
-                OnAttackPlayer ();
+                if (MonsterNotAttacked)
+                {
+                    MonsterNotAttacked = false;
+                    // Timer is up, Animation is attacking
+                    OnAttackPlayer ();
+                }
+
             }
             yield return null;
         }
         MonsterInvincible = false;
-
+        MonsterNotAttacked = true;
         ActualAttackCD = 0.8f;
     }
 }
