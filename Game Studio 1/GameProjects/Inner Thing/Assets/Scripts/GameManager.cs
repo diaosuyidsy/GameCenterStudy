@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Animator LighteningAnimator;
     public float LighteningCD = 10f;
 
+    private bool stopLightning = false;
+
     private void Awake()
     {
         GM = this;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator startLightening()
     {
-        while (true)
+        while (!stopLightning)
         {
             LighteningAnimator.SetTrigger("Struck");
             GetComponent<AudioSource>().clip = LightningSoundFX;
@@ -70,4 +72,10 @@ public class GameManager : MonoBehaviour
         GetComponent<AudioSource>().clip = CandleLitSFX;
         GetComponent<AudioSource>().Play();
     }
+
+    public void StopLight()
+    {
+        stopLightning = true;
+    }
+
 }
